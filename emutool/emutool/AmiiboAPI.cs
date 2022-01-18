@@ -64,8 +64,9 @@ namespace emutool
         };
 
         private const string AmiiboAPIURL = "https://www.amiiboapi.com/api/amiibo/";
+        private const string AmiiboImgSource = "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/";
 
-        public static AmiiboList GetAllAmiibos()
+        public static AmiiboList GetAllAmiibos(string imgSource = "")
         {
             var list = new AmiiboList();
             try
@@ -73,12 +74,18 @@ namespace emutool
                 var json = JObject.Parse(Utils.GetFromURL(AmiiboAPIURL));
                 foreach(var entry in json["amiibo"])
                 {
+                    var oimg = entry["image"].ToString();
+                    if(imgSource != "")
+                    {
+                        oimg = oimg.Replace(AmiiboImgSource, imgSource);
+                    }
+
                     var amiibo = new Amiibo
                     {
                         AmiiboName = entry["name"].ToString().Replace('/', '_'), // Avoid amiibo names conflicting with system paths
                         SeriesName = entry["amiiboSeries"].ToString(),
                         CharacterName = entry["character"].ToString(),
-                        ImageURL = entry["image"].ToString(),
+                        ImageURL = oimg,
                         AmiiboId = entry["head"].ToString() + entry["tail"].ToString(),
                     };
                     list.Amiibos.Add(amiibo);

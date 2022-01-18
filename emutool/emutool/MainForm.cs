@@ -7,11 +7,14 @@ using System.Net;
 using System.Reflection;
 using System.Diagnostics;
 using FluentFTP;
+using emutool.Properties;
 
 namespace emutool
 {
     public partial class MainForm : Form
     {
+        private readonly Settings Settings = Settings.Default;
+
         public static AmiiboAPI.AmiiboList Amiibos = null;
 
         public static List<string> AmiiboSeries = null;
@@ -34,9 +37,10 @@ namespace emutool
             InitializeComponent();
             DialogCaption = "emutool v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
             Text = DialogCaption + " - emuiibo's tool for virtual amiibo creation";
-            Amiibos = AmiiboAPI.GetAllAmiibos();
 
-            if(HasAmiibos())
+            Amiibos = AmiiboAPI.GetAllAmiibos(Settings.ImageSource);
+
+            if (HasAmiibos())
             {
                 APIStatusLabel.Text = "AmiiboAPI was accessed - amiibo list was loaded.";
                 AmiiboSeries = Amiibos.GetAmiiboSeries();
