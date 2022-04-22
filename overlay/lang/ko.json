@@ -1,0 +1,132 @@
+{
+    "strings": [
+        {
+            "key": "UpngInvalidFile",
+            "value": "잘못된 파일"
+        },
+        {
+            "key": "UpngUnsupportedRgbPng",
+            "value": "RGB 형식 PNG는 지원되지 않습니다."
+        },
+        {
+            "key": "UpngUpscaleUnsupported",
+            "value": "업스케일링이 허용되지 않습니다."
+        },
+        {
+            "key": "UpngImageTooLarge",
+            "value": "이미지가 너무 큽니다."
+        },
+        {
+            "key": "UpngImageNotFound",
+            "value": "이미지를 찾을 수 없습니다."
+        },
+        {
+            "key": "UpngNotPngImage",
+            "value": "이미지가 PNG가 아닙니다."
+        },
+        {
+            "key": "UpngMalformedPng",
+            "value": "PNG 형식이 잘못되었습니다."
+        },
+        {
+            "key": "UpngUnsupportedPng",
+            "value": "이 PNG는 지원되지 않습니다."
+        },
+        {
+            "key": "UpngUnsupportedInterlacing",
+            "value": "이미지 인터레이스가 지원되지 않습니다."
+        },
+        {
+            "key": "UpngUnsupportedColorFormat",
+            "value": "이미지 색상 형식은 지원되지 않습니다."
+        },
+        {
+            "key": "UpngInvalidParameter",
+            "value": "잘못된 매개변수입니다."
+        },
+        {
+            "key": "EmuiiboNotPresent",
+            "value": "emuiibo가 없는 것 같습니다..."
+        },
+        {
+            "key": "Help",
+            "value": "도움말"
+        },
+        {
+            "key": "EnableEmulation",
+            "value": "에뮬레이션 활성화"
+        },
+        {
+            "key": "DisableEmulation",
+            "value": "에뮬레이션 비활성화"
+        },
+        {
+            "key": "ToogleConnectVirtualAmiibo",
+            "value": "가상 amiibo 연결/연결 해제"
+        },
+        {
+            "key": "SelectFolderVirtualAmiibo",
+            "value": "폴더/가상 amiibo 선택"
+        },
+        {
+            "key": "AddFavorite",
+            "value": "즐겨찾기에 추가"
+        },
+        {
+            "key": "RemoveFavorite",
+            "value": "즐겨찾기에서 제거"
+        },
+        {
+            "key": "ResetActiveVirtualAmiibo",
+            "value": "활성 가상 amiibo 재설정"
+        },
+        {
+            "key": "EmulationStatus",
+            "value": "에뮬레이션 상태"
+        },
+        {
+            "key": "EmulationStatusOn",
+            "value": "켬"
+        },
+        {
+            "key": "EmulationStatusOff",
+            "value": "끔"
+        },
+        {
+            "key": "CurrentGameIntercepted",
+            "value": "현재 게임은"
+        },
+        {
+            "key": "AvailableVirtualAmiibos",
+            "value": "사용 가능한 amibo"
+        },
+        {
+            "key": "Intercepted",
+            "value": "차단됨"
+        },
+        {
+            "key": "NotIntercepted",
+            "value": "차단되지 않음"
+        },
+        {
+            "key": "NoActiveVirtualAmiibo",
+            "value": "활성화된 가상 amiibo가 없음"
+        },
+        {
+            "key": "Connected",
+            "value": "연결됨
+        },
+        {
+            "key": "Disconnected",
+            "value": "연결 해제됨"
+        },
+        {
+            "key": "ViewVirtualAmiibos",
+            "value": "가상 amiibo 보기"
+        },
+        {
+            "key": "ViewFavorites",
+            "value": "즐겨찾기 보기"
+        }
+    ]
+}
