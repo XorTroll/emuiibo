@@ -67,7 +67,7 @@
             // AmiiboNameBox
             // 
             this.AmiiboNameBox.Location = new System.Drawing.Point(124, 25);
-            this.AmiiboNameBox.MaxLength = 10;
+            this.AmiiboNameBox.MaxLength = 40;
             this.AmiiboNameBox.Name = "AmiiboNameBox";
             this.AmiiboNameBox.Size = new System.Drawing.Size(255, 20);
             this.AmiiboNameBox.TabIndex = 1;
