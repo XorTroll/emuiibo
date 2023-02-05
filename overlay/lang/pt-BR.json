@@ -1,0 +1,140 @@
+{
+    "strings": [
+        {
+            "key": "UpngInvalidFile",
+            "value": "Arquivo inválido"
+        },
+        {
+            "key": "UpngUnsupportedRgbPng",
+            "value": "PNG em formato RGB não é suportado."
+        },
+        {
+            "key": "UpngUpscaleUnsupported",
+            "value": "Upscaling não permitido."
+        },
+        {
+            "key": "UpngImageTooLarge",
+            "value": "A imagem é muito grande."
+        },
+        {
+            "key": "UpngImageNotFound",
+            "value": "Imagem não encontrada."
+        },
+        {
+            "key": "UpngNotPngImage",
+            "value": "A imagem não é um PNG."
+        },
+        {
+            "key": "UpngMalformedPng",
+            "value": "A imagem PNG é inválida."
+        },
+        {
+            "key": "UpngUnsupportedPng",
+            "value": "Este PNG não é suportado."
+        },
+        {
+            "key": "UpngUnsupportedInterlacing",
+            "value": "Imagem entrelaçada não é suportada."
+        },
+        {
+            "key": "UpngUnsupportedColorFormat",
+            "value": "A cor desta imagem não é suportada."
+        },
+        {
+            "key": "UpngInvalidParameter",
+            "value": "Parâmetro inválido."
+        },
+        {
+            "key": "EmuiiboNotPresent",
+            "value": "emuiibo parece não estar presente."
+        },
+        {
+            "key": "Help",
+            "value": "Ajuda"
+        },
+        {
+            "key": "EnableEmulation",
+            "value": "Ativar emulação"
+        },
+        {
+            "key": "DisableEmulation",
+            "value": "Desativar emulação"
+        },
+        {
+            "key": "ToogleConnectVirtualAmiibo",
+            "value": "Conectar/Desconectar amiibo virtual"
+        },
+        {
+            "key": "SelectFolderVirtualAmiibo",
+            "value": "Selecionar pasta/amiibo virtual"
+        },
+        {
+            "key": "AddFavorite",
+            "value": "Adicionar aos favoritos"
+        },
+        {
+            "key": "RemoveFavorite",
+            "value": "Remover dos favoritos"
+        },
+        {
+            "key": "ResetActiveVirtualAmiibo",
+            "value": "Resetar amiibo virtual ativo"
+        },
+        {
+            "key": "EmulationStatus",
+            "value": "Estado da emulação"
+        },
+        {
+            "key": "EmulationStatusOn",
+            "value": "Ativado"
+        },
+        {
+            "key": "EmulationStatusOff",
+            "value": "Desativado"
+        },
+        {
+            "key": "CurrentGameIntercepted",
+            "value": "Jogo atual está"
+        },
+        {
+            "key": "AvailableVirtualAmiibos",
+            "value": "Amiibos disponíveis em"
+        },
+        {
+            "key": "Intercepted",
+            "value": "Interceptado"
+        },
+        {
+            "key": "NotIntercepted",
+            "value": "Não interceptado"
+        },
+        {
+            "key": "NoActiveVirtualAmiibo",
+            "value": "Nenhum amiibo virtual ativo"
+        },
+        {
+            "key": "Connected",
+            "value": "Conectado"
+        },
+        {
+            "key": "Disconnected",
+            "value": "Desconectado"
+        },
+        {
+            "key": "ViewVirtualAmiibos",
+            "value": "Ver amiibos virtuais"
+        },
+        {
+            "key": "ViewFavorites",
+            "value": "Ver favoritos"
+        },
+        {
+            "key": "SelectedArea",
+            "value": "Área selecionada"
+        },
+        {
+            "key": "NoVirtualAmiiboAreas",
+            "value": "Este amiibo virtual não possui áreas."
+        }
+    ]
+}
