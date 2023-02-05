@@ -94,7 +94,7 @@
         },
         {
             "key": "CurrentGameIntercepted",
-            "value": "Jogo atual está"
+            "value": "Jogo atual"
         },
         {
             "key": "AvailableVirtualAmiibos",
@@ -110,7 +110,7 @@
         },
         {
             "key": "NoActiveVirtualAmiibo",
-            "value": "Nenhum amiibo virtual ativo"
+            "value": "Nenhum amiibo ativo"
         },
         {
             "key": "Connected",
