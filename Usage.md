@@ -6,10 +6,10 @@ In this wiki you'll learn how to set up emuiibo, amiibos and how to use it prope
 
 ## Contents
 
-- [Downloads](#Downloads)
-- [Set-Up](##Set-Up)
-- [emutool](##emutool)
-- [Controls](##Controls)
+- [Downloads](#downloads)
+- [Set-Up](#set-up)
+- [emutool](#emutool)
+- [Controls](#controls)
 
 ## Downloads
 
