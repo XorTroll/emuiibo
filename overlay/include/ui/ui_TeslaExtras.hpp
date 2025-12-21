@@ -1,5 +1,6 @@
 #pragma once
 #include <tesla.hpp>
+#include <tr/tr_Translation.hpp>
 
 #define SECTION_SAME_SIZE(height) ((height - 73 - 80) / 2)
 #define SECTION_BIG_SIZE(height) (((height - 73 - 80) / 3) * 2)
@@ -400,7 +401,7 @@ namespace ui {
 
                 renderer->drawRect(15, tsl::cfg::FramebufferHeight - 73, tsl::cfg::FramebufferWidth - 30, 1, a(tsl::style::color::ColorText));
 
-                renderer->drawString("\uE0E1  Back     \uE0E0  OK", false, 30, 693, 23, a(tsl::style::color::ColorText));
+                renderer->drawString(("\uE0E1  " + "Back"_tr + "     \uE0E0  " + "OK"_tr).c_str(), false, 30, 693, 23, a(tsl::style::color::ColorText));
 
                 if (this->m_topSection != nullptr)
                     this->m_topSection->frame(renderer);

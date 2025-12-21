@@ -1,28 +1,28 @@
-
-name: Build emuiibo
+name: Build emuiibo - 20251205
 
 on:
-  push:
-    paths:
-      - 'emuiibo/**'
-      - 'overlay/**'
+  workflow_dispatch:
 
 jobs:
   emuiibo:
     runs-on: ubuntu-latest
     container: devkitpro/devkita64:latest
-
+    permissions:
+      contents: write
+      packages: write
     steps:
     - name: Checkout 
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         submodules: recursive
       
+    - name: Mark repo as safe
+      run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
     - name: Update packages
       run: |
         sudo -n apt-get update
-        sudo -n apt-get upgrade -y git build-essential
-
+        sudo -n apt-get upgrade -y git build-essential zip
     - name: Prepare Rust
       uses: actions-rs/toolchain@v1
       with:
@@ -36,20 +36,60 @@ jobs:
     - name: Prepare cargo-nx
       run: cargo install cargo-nx --git https://github.com/aarch64-switch-rs/cargo-nx
 
+    - name: Checkout nx crate source
+      run: |
+        mkdir -p /__w/emuiibo/aarch64-switch-rs/
+        git clone --recurse-submodules https://github.com/aarch64-switch-rs/nx.git /__w/emuiibo/aarch64-switch-rs/nx
+
     - name: Checkout latest libnx commit
       run: |
         git clone --recurse-submodules https://github.com/switchbrew/libnx.git
-
     - name: Build and install libnx
       run: |
         cd libnx
         make install -j$(nproc)
+    - name: Build emuiibo and overlay (.nsp + .ovl)
+      run: |
+        make -C overlay
+        make emuiibo -j$(nproc)
+      env:
+        DEVKITPRO: /opt/devkitpro
+        DEVKITARM: /opt/devkitpro/devkitARM
 
-    - name: Build
-      run: make emuiibo -j$(nproc)
+    - name: Pack ZIP (include .nsp + .ovl)
+      run: |
+        cd SdOut
+        zip -r ../emuiibo.zip .
+    - name: Read version from Makefile
+      id: get_version
+      run: |
+        VER_MAJOR=$(grep -oP 'VER_MAJOR\s+:=\s+\K\d+' overlay/Makefile)
+        VER_MINOR=$(grep -oP 'VER_MINOR\s+:=\s+\K\d+' overlay/Makefile)
+        VER_MICRO=$(grep -oP 'VER_MICRO\s+:=\s+\K\d+' overlay/Makefile)
+        FULL_VERSION="$VER_MAJOR.$VER_MINOR.$VER_MICRO"
+        echo "full_version=$FULL_VERSION" >> "$GITHUB_OUTPUT"
+    - name: Generate Release Tag
+      id: reltag
+      run: |
+        MAKEFILE_VERSION="${{ steps.get_version.outputs.full_version }}"
+        SHORT_SHA="$(git rev-parse --short HEAD)"
+        TAG_NAME="v$MAKEFILE_VERSION-$SHORT_SHA"
+        REL_NAME="emuiibo v$MAKEFILE_VERSION ($SHORT_SHA)"
+        echo "tag_name=${TAG_NAME}" >> "$GITHUB_OUTPUT"
+        echo "rel_name=${REL_NAME}" >> "$GITHUB_OUTPUT"
+    - name: Upload Release Assets
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ steps.reltag.outputs.tag_name }}
+        name: ${{ steps.reltag.outputs.rel_name }}
+        files: emuiibo.zip
+        generate_release_notes: true
+        prerelease: true
+        token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Upload
-      uses: actions/upload-artifact@v3
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
       with:
         name: SdOut
         path: SdOut
+        if-no-files-found: error

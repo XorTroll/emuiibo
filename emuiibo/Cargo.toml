@@ -21,7 +21,7 @@ sha2 = { version = "0.10.9", default-features = false }
 [package.metadata.nx.nsp.npdm]
 name = "emuiibo"
 signature_key_generation = 0
-main_thread_stack_size = "0x30000"
+main_thread_stack_size = "0x300000"
 main_thread_priority = 49
 main_thread_core_number = 3
 system_resource_size = 0

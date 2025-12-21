@@ -147,6 +147,14 @@
         {
             "key": "RandomUuid",
             "value": "UUID aleatoria"
+        },
+        {
+            "key": "Back",
+            "value": "Volver"
+        },
+        {
+            "key": "OK",
+            "value": "OK"
         }
     ]
 }

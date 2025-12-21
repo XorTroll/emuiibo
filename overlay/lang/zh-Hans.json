@@ -147,6 +147,14 @@
         {
             "key": "RandomUuid",
             "value": "随机UUID"
+        },
+        {
+            "key": "Back",
+            "value": "返回"
+        },
+        {
+            "key": "OK",
+            "value": "确定"
         }
     ]
 }

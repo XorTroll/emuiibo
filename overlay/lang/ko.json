@@ -147,6 +147,14 @@
         {
             "key": "RandomUuid",
             "value": "무작위 UUID"
+        },
+        {
+            "key": "Back",
+            "value": "뒤로"
+        },
+        {
+            "key": "OK",
+            "value": "확인"
         }
     ]
 }
